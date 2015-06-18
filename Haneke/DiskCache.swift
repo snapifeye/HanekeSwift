@@ -9,9 +9,12 @@
 import Foundation
 
 public class DiskCache {
+	
+	public static var searchPathDirectory = NSSearchPathDirectory.CachesDirectory
     
     public class func basePath() -> String {
-        let cachesPath = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.CachesDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0] as! String
+		
+        let cachesPath = NSSearchPathForDirectoriesInDomains(searchPathDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0] as! String
         let hanekePathComponent = HanekeGlobals.Domain
         let basePath = cachesPath.stringByAppendingPathComponent(hanekePathComponent)
         // TODO: Do not recaculate basePath value

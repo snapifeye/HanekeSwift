@@ -16,6 +16,7 @@ class ViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+		
         self.collectionView!.registerClass(CollectionViewCell.self, forCellWithReuseIdentifier: CellReuseIdentifier)
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSizeMake(100, 100)
